@@ -1,8 +1,11 @@
 import readlinesync = require("readline-sync");
+import { Conta } from "./src/model/Conta";
 import { colors } from "./src/util/color"; // paleta de cores
 
 export function main() {
     let opcao: number;
+
+    const c1 = new Conta(1, 123, 1, "Jonas", 10000);
 
     while (true) {
         // Limpa o console antes de exibir o menu
