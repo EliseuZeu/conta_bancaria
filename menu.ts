@@ -1,5 +1,5 @@
 import readlinesync = require("readline-sync");
-import { colors } from "..//components/util/color"; // paleta de cores
+import { colors } from "./src/util/color"; // paleta de cores
 
 export function main() {
     let opcao: number;
