@@ -1,149 +1,120 @@
-# Projeto Conta Bancária - TypeScript
+# 🌐 NEONVAULT BANK AI  
+**Onde o futuro encontra o dinheiro**  
 
-<br />
+---
 
-<div align="center">
-   <img src="https://i.imgur.com/izFuHID.png" title="source: imgur.com" width="25%"/>
-</div>
+## **Descrição**  
+Bem-vindo ao **NEONVAULT BANK AI**, um sistema bancário moderno e inovador, projetado para simular e gerenciar operações financeiras com segurança, eficiência e tecnologia de ponta.  
 
-<br /><br />
+### **Principais características:**  
+- Gestão de contas bancárias (Corrente e Poupança).  
+- Operações como criação, consulta, edição, exclusão e transações financeiras.  
+- Aplicação prática de conceitos avançados de **Programação Orientada a Objetos (POO)**:  
+  - **Classes, Objetos e Interfaces**  
+  - **Herança e Polimorfismo**  
+  - **Classes Abstratas**  
+  - **Modificadores de Acesso**  
 
-## 1. Descrição
+Nosso objetivo é oferecer uma plataforma educativa e funcional, onde a experiência do usuário e o aprendizado técnico caminham lado a lado.  
 
+---
 
-O **Projeto Conta Bancária** é um sistema de gestão projetado para simular e gerenciar operações financeiras relacionadas a contas bancárias. Ele oferece funcionalidades como criação, consulta, edição e exclusão de contas, além de transações como depósitos, saques e transferências.
-
-O sistema organiza as informações dos clientes, incluindo nome, número da conta, saldo, entre outras, garantindo a realização de operações de forma segura e eficiente. Seu principal objetivo é automatizar e simplificar a administração de contas bancárias, categorizadas por tipo e finalidade, como Conta Corrente e Conta Poupança, promovendo eficiência e confiabilidade em ambientes financeiros.
-
-Este projeto, desenvolvido em TypeScript, foca no estudo e aplicação de conceitos de **Programação Orientada a Objetos (POO)**, incluindo:
-
-- Classes e Objetos;
-- Atributos e Métodos;
-- Modificadores de Acesso;
-- Herança e Polimorfismo;
-- Classes Abstratas;
-- Interfaces.
-
-Além de servir como um simulador funcional, o projeto oferece uma base prática para compreender princípios fundamentais da POO aplicados em um cenário realista.
-
-<br />
-
-## 2. Diagrama de Classes
-
-
-
-Um **Diagrama de Classes** é um modelo visual usado na programação orientada a objetos para representar a estrutura de um sistema. Ele exibe classes, seus atributos, métodos e os relacionamentos entre elas, como associações, heranças e dependências. Esse diagrama ajuda a planejar e entender a arquitetura do sistema, mostrando como os componentes interagem e se conectam. É amplamente utilizado em fases de design e documentação de projetos. Abaixo, você confere o Diagrama de Classes contendo o modelo de dados do Projeto Conta Bancária:
+## **Diagrama de Classes**  
+O sistema **NEONVAULT BANK AI** foi projetado com uma arquitetura baseada em POO.  
 
 ```mermaid
 classDiagram
-class Conta {
-  - _numero: number
-  - _agencia: number
-  - _tipo: number
-  - _titular: string
-  - _saldo: number
-  + get numero() number
-  + get agencia() number
-  + get tipo() number
-  + get titular() string
-  + get saldo() number
-  + set numero(numero: number) void
-  + set agencia(agencia: number) void
-  + set tipo(tipo: number) void
-  + set titular(titular: string) void
-  + set saldo(saldo: number) void
-  + sacar(valor: number) boolean
-  + depositar(valor: number) void
-  + visualizar() void
-}
-class ContaCorrente {
-  - _limite: number
-  + get limite() number
-  + set limite(limite: number) void
-  + sacar(valor: number) boolean
-  + visualizar() void
-}
-class ContaPoupanca {
-  - _aniversario: number
-  + get aniversario() number
-  + set aniversario(aniversario: number) void
-  + visualizar() void
-}
-ContaCorrente --> Conta
-ContaPoupanca --> Conta
-```
+    class Conta {
+      - numero: number
+      - agencia: number
+      - tipo: number
+      - titular: string
+      - saldo: number
+      + sacar(valor: number): boolean
+      + depositar(valor: number): void
+      + visualizar(): void
+    }
 
-<br />
+    class ContaCorrente {
+      - limite: number
+      + sacar(valor: number): boolean
+      + visualizar(): void
+    }
 
-## 3. Tecnologias utilizadas
+    class ContaPoupanca {
+      - aniversario: number
+      + visualizar(): void
+    }
 
-- Node.js v16+ ou superior
-- TypeScript v5+ ou superior
+    Conta <|-- ContaCorrente
+    Conta <|-- ContaPoupanca
 
-<br />
+````
 
-## 4. Instalação
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/rafaelq80/conta_bancaria_tjs06.git
-   ```
+## Tecnologias Utilizadas
+Node.js v16+
+TypeScript v5+
 
-2. Acesse a pasta do projeto:
-   ```bash
-   cd conta_bancaria_tjs06
-   ```
 
-3. Instale as dependências:
-   ```bash
-   npm install
-   ```
+# 🚀 Funcionalidades do Sistema Bancário
 
-<br />
+---
 
-## 5. Como Executar
+## ⚙️ **Gestão de Contas**
 
-1. Execute o projeto:
-   ```bash
-   ts-node Menu.ts
-   ```
-   
+- **Criar Conta**  
+  Adicione contas bancárias do tipo **Corrente** ou **Poupança**.
 
-<br />
+- **Listar Contas**  
+  Visualize todas as contas cadastradas no sistema.
 
-## 6. Funcionalidades
+- **Buscar Conta**  
+  - **Por número**: Localize uma conta específica usando o número da conta.  
+  - **Por nome**: Encontre contas associadas ao nome do titular.
 
-### 1. Criação de Conta
-Permite criar uma nova conta bancária especificando nome do titular, número da agência, número da conta e saldo inicial, al´me das propriedades específicas de cada tipo de conta.
+- **Atualizar Conta**  
+  Altere informações de uma conta existente.
 
-### 2. Listagem de Contas
-Lista todas as contas cadastradas no sistema.
+- **Excluir Conta**  
+  Remova contas do sistema de forma definitiva.
 
-### 3. Consulta de Conta
+---
 
-- Por número: Encontra uma conta pelo número.
-- Por nome: Encontra uma ou mais contas associadas a um titular.
+## 💰 **Operações Financeiras**
 
-### 4. Edição de Conta
-Permite atualizar os dados de uma conta existente a partir do número da conta.
+- **Depósito**  
+  Adicione fundos a uma conta bancária.
 
-### 5. Exclusão de Conta
-Remove uma conta especifica a partir do número da conta.
+- **Saque**  
+  Retire valores de uma conta, respeitando o saldo e os limites disponíveis.
 
-### 6. Saque
-Realiza a retirada de um valor de uma conta, desde que o saldo seja suficiente.
+- **Transferência**  
+  Movimente dinheiro entre contas do tipo **Corrente** e/ou **Poupança**.
 
-### 7. Depósito
-Adiciona um valor ao saldo de uma conta existente.
 
-### 8. Transferência
-Transfere um valor de uma conta para outra, respeitando os saldos e limites.
-
-<br />
-
-## 7. Tela Inicial do Sistema
+*****************************************************
+*                                                   *
+*                ✨  NEONVAULT BANK AI  ✨         *
+*          ** Onde o futuro encontra o dinheiro **  *
+*                                                   *
+*****************************************************
+*                                                   *
+*            1️⃣  Criar Conta                          *
+*            2️⃣  Listar todas as Contas               *
+*            3️⃣  Buscar Conta por Número              *
+*            4️⃣  Atualizar Dados da Conta             *
+*            5️⃣  Apagar Conta                         *
+*            6️⃣  Realizar Saque                       *
+*            7️⃣  Fazer Depósito                       *
+*            8️⃣  Transferir Valores entre Contas      *
+*            9️⃣  Visualizar Extrato                   *
+*            🔟  Sair                                 *
+*                                                   *
+*****************************************************
+*       💡 Segurança cibernética de última geração 💡  *
+*****************************************************
 
 
 
-<div align="center">
-   <img src="https://i.imgur.com/MFK9yXB.png" title="source: imgur.com" width="90%"/>
-</div>
+
+
