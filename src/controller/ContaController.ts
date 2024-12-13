@@ -1,5 +1,5 @@
 import { Conta } from '../model/Conta'
-import { ContaRepository } from '../repository/ContaRepository'
+import { ContaRepository } from '../repository/ConstaRepository'
 
 export class ContaController implements ContaRepository {
 	// Coleção Array que vai armazenar os Objetos Conta
